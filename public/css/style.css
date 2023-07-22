@@ -1,6 +1,15 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.head1{
+    font-size: 80px;
+}
+
+.head2{
+    font-size: 70px;
+}
+
 .button2{
     width:150px;
     background-color: #85df5f;
@@ -18,7 +27,19 @@ body{
     background-color: #60de29 !important;
 }
 
-.upload{
-    width: 250px;
+.upload-button{
+    width: 350px;
     border-color: 10px 10px 10px 10px  rgb(161, 4, 4);
+}
+
+@media screen  and (max-width:575px){
+    .head1{
+        font-size: 55px;
+    }
+    .head2{
+        font-size: 45px;
+    }
+    .upload-button{
+        width: 200px;
+    }
 }
