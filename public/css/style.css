@@ -33,6 +33,10 @@ body{
     background-color: #60de29 !important;
 }
 
+.upload-button:hover{
+    background-color: #60de29 !important;
+}
+
 .upload-button{
     width: 350px;
     box-shadow: 1px 2px 1px 1px  black;
