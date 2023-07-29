@@ -10,15 +10,11 @@ uploadButton.addEventListener("click",() => {
 });
 
 compressButton.addEventListener("click",() => {
-    compressButton.style.backgroundColor = "#60de29";
-    blogButton.style.backgroundColor = "#fff";
-    compressArrow.style.display = "none";
     blogArrow.style.display = "inline-block";
+    compressArrow.style.display = "none";
 });
 
 blogButton.addEventListener("click",() => {
-    blogButton.style.backgroundColor = "#60de29";
-    compressButton.style.backgroundColor = "#fff";
-    compressArrow.style.display = "inline-block";
+       compressArrow.style.display = "inline-block";
     blogArrow.style.display = "none";
 });

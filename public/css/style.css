@@ -21,6 +21,10 @@ body{
     box-shadow: 1px 2px 1px 1px  black;
 }
 
+.blogs:hover{
+    color: rgb(32, 101, 205);
+}
+
 .footer{
     background-color: #002c13;
 }
