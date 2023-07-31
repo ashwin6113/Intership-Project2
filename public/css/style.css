@@ -21,6 +21,25 @@ body{
     box-shadow: 1px 2px 1px 1px  black;
 }
 
+.Download{
+    width:350px;
+    background-color: #60de29;
+    box-shadow: 1px 2px 1px 1px  black;
+}
+
+.Download:hover{
+    background-color: #60de29 !important;
+}
+
+.Retry{
+    width:350px;
+    box-shadow: 1px 2px 1px 1px  black;
+}
+
+.Retry:hover{
+    background-color: #60de29 !important;
+}
+
 .blogs:hover{
     color: rgb(32, 101, 205);
 }
@@ -45,6 +64,12 @@ body{
     width: 350px;
     box-shadow: 1px 2px 1px 1px  black;
 }
+.input{
+    width: 350px;
+    border: none;
+    outline: none;
+    background-color: rgb(59, 167, 239);
+}
 
 @media screen  and (max-width:575px){
     .head1{
@@ -55,5 +80,14 @@ body{
     }
     .upload-button{
         width: 200px;
+    }
+    .input{
+        width: 180px;
+    }
+    .Download{
+        width:180px;
+    }
+    .Retry{
+        width: 180px;
     }
 }

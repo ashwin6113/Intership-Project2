@@ -7,6 +7,7 @@ var compressArrow = document.getElementById("compressArrow");
 
 uploadButton.addEventListener("click",() => {
     uploadButton.style.backgroundColor = "#60de29";
+    window.showOpenFilePicker();
 });
 
 compressButton.addEventListener("click",() => {
