@@ -1,7 +1,7 @@
 // navigation.js
 document.addEventListener('DOMContentLoaded', function () {
     // Fetch the navigation.html file
-    fetch('../components/navbar.html')   
+    fetch('../../components/navbar.html')   
       .then(function (response) {
         return response.text();
       })
