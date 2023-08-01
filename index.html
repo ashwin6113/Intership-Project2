@@ -43,15 +43,16 @@
             <div>
                 <h1 class="head1 text-center mt-5">COMPRESS</h1>
                 <h1 class="head2 text-center"> <span class="typing"></span></h1>
-                <button type="button" class="upload-button border border-secondary border-2 rounded fw-bold mt-4 p-2" id="uploadButton">
+                <input type="file" name="uploadfile" multiple accept=".png, .jpeg, .jpg, .webp" id="files" style="display: none;">
+                <label for="files" class="upload-button border border-secondary border-2 rounded fw-bold mt-4 p-2" id="uploadButton">
                     <h4><i class="bi bi-upload"></i> Upload files</h4>
-                </button>
+                </label>
             </div>
             <div style="display: none;">
-                <h1 class="head1 text-center mt-5">Quality:</h1>
+                <h1 class="head1 text-center mt-5">Quality:<span id="quality"></span></h1>
                 <h1 class="head1 text-center mt-2">Size:</h1>
                 <div class="track">
-                    <input type="range" class="input" min="0" value="45" max="99" step="any">
+                    <input type="range" id="input" min="0" value="45" max="99" step="any">
                 </div>
                 <button class="Download btn mt-2 fw-bold">Download</button><br>
                 <a class="Retry btn mt-3 fw-bold" href="./index.html"> <i class="bi bi-arrow-clockwise"></i> Retry</a><br>
