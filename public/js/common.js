@@ -16,9 +16,10 @@ document.getElementById("input").addEventListener('change', () => {
 });
 
 document.getElementById('files').addEventListener('change', function (event) {
-    const file = event.target.files[0];
+    file = event.target.files[0];
     console.log(file);
     console.log(file.size);
+    size.innerHTML = `${file.size}`
     beforeCompress.style.display = "none";
     afterCompress.style.display = "block";
   });
