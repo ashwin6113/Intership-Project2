@@ -20,7 +20,7 @@
     <div class="main">
       <div id="navbar"></div>
         <div class="compressContent text-center" id="compressContent">
-            <div>
+            <div id="beforeCompress">
                 <h1 class="head1 text-center mt-5">COMPRESS</h1>
                 <h1 class="head2 text-center"> <span class="typing"></span></h1>
                 <input type="file" name="uploadfile" multiple accept=".png, .jpeg, .jpg, .webp" id="files" style="display: none;">
@@ -28,9 +28,9 @@
                     <h4><i class="bi bi-upload"></i> Upload files</h4>
                 </label>
             </div>
-            <div style="display: none;">
+            <div id="afterCompress" style="display: none;">
                 <h1 class="head1 text-center mt-5">Quality:<span id="quality"></span></h1>
-                <h1 class="head1 text-center mt-2">Size:</h1>
+                <h1 class="head1 text-center mt-2">Size: <span id="size"></span></h1>
                 <div class="track">
                     <input type="range" id="input" min="0" value="45" max="99" step="any">
                 </div>
@@ -44,7 +44,7 @@
                 <p>Copyright© nothingbutcompress 2023 us</p>
             </div>
             <div class="text-center px-3">
-                <a class="nav-link" href="#about">Privacy . Terms . Contact</a>
+                <a class="nav-link" href="#">Privacy . Terms . Contact</a>
             </div>
         </footer>
     </div>
@@ -60,5 +60,5 @@
     <script src="/public/js/components.js"></script>
 
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js" integrity="sha512-MgYeYFj8R3S6rvZHiJ1xA9cM/VDGcT4eRRFQwGA7qDP7NHbnWKNmAm28z0LVjOuUqjD0T9JxpDMdVqsZOSHaSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

@@ -4,3 +4,4 @@ var blogButton = document.getElementById("blogButton");
 var blogArrow = document.getElementById("blogArrow");
 var compressArrow = document.getElementById("compressArrow");
 var quality = document.getElementById("quality");
+let file;
