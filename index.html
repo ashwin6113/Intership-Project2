@@ -20,6 +20,7 @@
     <div class="main">
       <div id="navbar"></div>
         <div class="compressContent text-center" id="compressContent">
+            <div class="linearColoring"></div>
             <div id="beforeCompress">
                 <h1 class="head1 text-center mt-5">COMPRESS</h1>
                 <h1 class="head2 text-center"> <span class="typing"></span></h1>
@@ -32,14 +33,14 @@
                 <h1 class="head1 text-center mt-5">Quality:<span id="quality"></span></h1>
                 <h1 class="head1 text-center mt-2">Size: <span id="size"></span></h1>
                 <div class="track">
-                    <input type="range" id="input" min="0" value="45" max="99" step="any">
+                    <input type="range" id="input" min="1" value="45" max="99" step="any">
                 </div>
-                <button class="Download btn mt-2 fw-bold">Download</button><br>
+                <button class="Download btn mt-2 fw-bold" id="download">Download</button><br>
                 <a class="Retry btn mt-3 fw-bold" href="./index.html"> <i class="bi bi-arrow-clockwise"></i> Retry</a><br>
                 <button class="btn btn-primary mt-3 fw-bold" style="box-shadow: 1px 2px 1px 1px  black;">Buy me a coffee</button>
             </div>
         </div>
-        <footer class="footer fixed-bottom flex-column flex-sm-row text-white p-3 align-items-center" id="footer">
+        <footer class="footer fixed-bottom flex-column flex-sm-row text-white align-items-center" id="footer">
             <div class="text-center px-3">
                 <p>Copyright© nothingbutcompress 2023 us</p>
             </div>
@@ -56,11 +57,12 @@
     <script src="./public/js/common.js"></script>
     <!--UI js file-->
     <script src="./public/js/UI.js"></script>
+    <!--main js file-->
+    <script src="./public/js/main.js"></script>
     <!--Components js file-->
-    <script src="/public/js/components.js"></script>
+    <script src="./public/js/components.js"></script>
     <!--Image compressor library-->
     <script src="https://cdn.jsdelivr.net/npm/image-compressor@2.0.3/dist/image-compressor.min.js"></script>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js" integrity="sha512-MgYeYFj8R3S6rvZHiJ1xA9cM/VDGcT4eRRFQwGA7qDP7NHbnWKNmAm28z0LVjOuUqjD0T9JxpDMdVqsZOSHaSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
