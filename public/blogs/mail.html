@@ -71,8 +71,8 @@
         function sendMail() {
             Email.send({
                 Host: "smtp.elasticemail.com",
-                Username: "5594@mbcpeermade.com",
-                Password: "092A4BD9B03E4856359C79D4530DA75A2726",
+                Username : config.mail_username,
+                Password : config.mail_password,
                 To: document.getElementById('email').value,
                 From: '5594@mbcpeermade.com',
                 Subject: "Thank you for joining Nothing But Compress!",
@@ -95,7 +95,7 @@
 <!--Bootstrap js file-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!--comman js file-->
-<!-- <script src="../js/common.js"></script> -->
+<script src="../js/config.js"></script>
 <!--UI js file-->
 <!-- <script src="../js/UI.js"></script> -->
 
