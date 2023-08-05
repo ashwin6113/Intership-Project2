@@ -1,3 +1,54 @@
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.head1 {
+    font-size: 80px;
+}
+
+.head2 {
+    font-size: 70px;
+}
+
+.button1 {
+    width: 150px;
+    background-color: #60de29;
+    box-shadow: 1px 2px 1px 1px black;
+}
+
+.button2 {
+    width: 150px;
+    box-shadow: 1px 2px 1px 1px black;
+}
+
+.blogs:hover {
+    color: rgb(32, 101, 205);
+}
+
+.button1:hover {
+    background-color: #60de29 !important;
+}
+
+.button2:hover {
+    background-color: #60de29 !important;
+}
+
+@media screen and (max-width:575px) {
+    .head1 {
+        font-size: 55px;
+    }
+
+    .head2 {
+        font-size: 45px;
+    }
+
+    .upload-button {
+        width: 200px;
+    }
+}
+
+
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
