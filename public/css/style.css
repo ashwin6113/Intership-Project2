@@ -96,6 +96,10 @@ body{
     outline: none;
     background-color: rgb(59, 167, 239);
 }
+.linearColoring{
+    height: 20px;
+    background-image: linear-gradient(to bottom, #f3fcef, #fff);
+}
 
 @media screen  and (max-width:575px){
     .upload-button{
