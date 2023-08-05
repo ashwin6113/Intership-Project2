@@ -5,19 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/img/compresser.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/compresser.png" type="image/x-icon">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--Bootstrap style sheet-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--main style sheet -->
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Nothing but compress:Blogs</title>
 </head>
 
 <body>
     <div class="main">
-        <div id="navbar"></div>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container px-5 d-flex justify-content-center align-item-center">
+                <a class="navbar-brand" style="cursor: pointer">
+                    <img src="../img/compresser.png" width="200px" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavbar">
+                </a>
+                <div class="collapse navbar-collapse row" id="collapsibleNavbar">
+                    <ul class="navbar-nav text-center d-flex justify-content-end flex-sm-row">
+                        <li class="nav-item p-2">
+                            <a type="button" class="button1 border border-secondary btn" id="compressButton"
+                                href="../../index.html">Compress <i class="bi bi-arrow-right" id="compressArrow"
+                                    style="display: none;"></i></a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a type="button" class="button2 border border-secondary rounded btn" id="blogButton"
+                                href="./blog.html">Blog <i class="bi bi-arrow-right"
+                                    id="blogArrow"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="blogContent container" id="blogContent">
             <div class="row px-5 py-3">
                 <a href="./ossless-image-compression.html"
@@ -27,7 +48,7 @@
                         <h1>Lossless image compression</h1>
                     </div>
                     <div>
-                        <img src="../../public/img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
+                        <img src="../img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
                     </div>
                 </a>
             </div>
@@ -39,7 +60,7 @@
                         <h1>How to compress images on mac</h1>
                     </div>
                     <div>
-                        <img src="../../public/img/blog2.1jpeg" alt="thumbnail" width="50px" class="m-5">
+                        <img src="../img/blog2.1jpeg" alt="thumbnail" width="50px" class="m-5">
                     </div>
                 </a>
             </div>
@@ -51,7 +72,7 @@
                         <h1>Compress images online</h1>
                     </div>
                     <div>
-                        <img src="../../public/img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
+                        <img src="../img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
                     </div>
                 </a>
             </div>
@@ -64,7 +85,7 @@
                         </h1>
                     </div>
                     <div>
-                        <img src="../../public/img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
+                        <img src="../img/blog1.1.jpeg" alt="thumbnail" width="50px" class="m-5">
                     </div>
                 </a>
             </div>
@@ -76,23 +97,25 @@
                         <h1>Should you upload image on random a compression site?</h1>
                     </div>
                     <div>
-                        <img src="../../public/img/blog5.jpg" alt="thumbnail" width="50px" class="m-5">
+                        <img src="../img/blog5.jpg" alt="thumbnail" width="50px" class="m-5">
                     </div>
                 </a>
             </div>
         </div>
-        <div id="footer"></div>
+        <footer class="footer flex-column flex-sm-row text-white align-items-center" id="footer">
+            <div class="text-center px-3">
+                <p>Copyright© nothingbutcompress 2023 us</p>
+            </div>
+            <div class="text-center px-3">
+                <a class="nav-link" href="#">Privacy . Terms . Contact</a>
+            </div>
+        </footer>
     </div>
 </body>
 <!--Bootstrap js file-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!--typed script js file-->
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <!--comman js file-->
-<script src="./public/js/common.js"></script>
+<script src="../js/common.js"></script>
 <!--UI js file-->
-<script src="./public/js/UI.js"></script>
-<!--Components js file-->
-<script src="../../public/js/components.js"></script>
+<script src="../js/UI.js"></script>
 
-</html>
