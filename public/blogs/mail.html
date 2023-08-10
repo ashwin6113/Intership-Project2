@@ -68,22 +68,31 @@
         </footer>
     </div>
     <script>
+        // Function to send the email
+        function sendMail() {
+            emailjs.init("0V6YC9ItcjAY20d1W");
+            
+            let params = {
+                to_name: document.getElementById("name").value,
+                from_name: "nothing but compress",
+                reply_to: document.getElementById("email").value,
+            };
+            
+            console.log(params.from_name);
+            console.log(params.to_name);
+            console.log(params.reply_to);
 
-        emailjs.init("0V6YC9ItcjAY20d1W");
-       var params = {
-        to_name : document.getElementById("name").value,
-        from_name : "nothing but compress",
-        reply_to : document.getElementById("email").value 
-       };
-       console.log(params.from_name);
-console.log(params.to_name);
-       emailjs.send('service_snnb1ui', 'template_lzhakip', params)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
+            emailjs.send('service_snnb1ui', 'template_lzhakip', params)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }
+                .then(alert("Login successful")), function(error) {
+                    console.log('FAILED...', error);
+                });
+        }
     </script>
+    </script>
+
 </body>
 <!--Bootstrap js file-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
