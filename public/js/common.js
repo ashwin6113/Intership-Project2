@@ -7,14 +7,14 @@ var typed = new Typed(".typing", {
 });
 
 let range =45;
-quality.innerHTML = `${range}%`;
-document.getElementById("input").addEventListener('change', () => {
+const quality = document.getElementById("quality");
+quality.innerHTML = `${range}%`;  
+document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
     range = range.toFixed(0); 
     quality.innerHTML = `${range}%`;
 });
-
 document.getElementById('files').addEventListener('change', function (event) {
   compressAndDownload();
     beforeCompress.style.display = "none";
@@ -22,5 +22,5 @@ document.getElementById('files').addEventListener('change', function (event) {
   });
 
   const options = {
-    quality: 0.4,
+    quality: 0
   };

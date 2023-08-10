@@ -5,3 +5,5 @@ var blogArrow = document.getElementById("blogArrow");
 var compressArrow = document.getElementById("compressArrow");
 var quality = document.getElementById("quality");
 let file;
+let compressedFileSize;
+let quality;
