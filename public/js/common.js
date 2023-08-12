@@ -22,5 +22,18 @@ document.getElementById('files').addEventListener('change', function (event) {
   });
 
   const options = {
-    quality: 0
+    quality: 0,
   };
+
+  var darkMode = document.getElementById("darkMode");
+  darkMode.onclick = function(){
+      document.body.classList.toggle("dark-theme");
+  }
+document.getElementById('sun').addEventListener('click',() => {
+  moon.style.display = "block";
+  sun.style.display = "none";
+});
+document.getElementById('moon').addEventListener('click',() => {
+  moon.style.display = "none";
+  sun.style.display = "block";
+})
