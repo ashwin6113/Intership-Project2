@@ -15,7 +15,7 @@ body {
 
 .button1 {
     width: 130px;
-    background-color: #60de29;
+    background-color: var(--button-color);
     box-shadow: 1px 2px 1px 1px var(--primary-color);
     color: var(--text-color);
 }
@@ -31,11 +31,11 @@ body {
 }
 
 .button1:hover {
-    background-color: #60de29 !important;
+    background-color:var(--button-color) !important;
 }
 
 .button2:hover {
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .name{
@@ -55,10 +55,12 @@ body {
 :root{
     --primary-color:#fff;
     --text-color:#343333;
+    --button-color:#60de29;
 }
 .dark-theme{
     --primary-color:#343333;
     --text-color:#f4f4f4;
+    --button-color:#3bc06e;
 }
 
 @media screen and (max-width:575px) {
@@ -77,17 +79,18 @@ body {
 
 .Download{
     width:350px;
-    background-color: #60de29;
+    background-color: var(--button-color);
     box-shadow: 1px 2px 1px 1px  black;
 }
 
 .Download:hover{
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .Retry{
     width:350px;
     box-shadow: 1px 2px 1px 1px  black;
+    background-color: #fff;
 }
 
 .Retry:hover{
@@ -100,11 +103,11 @@ body {
 
 
 .footer{
-    background-color: #002c13;
+    background-color: #24613e;
 }
 
 .upload-button:hover{
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .upload-button{
@@ -117,7 +120,7 @@ body {
     outline: none;
     background-color: rgb(59, 167, 239);
 }
-.linearColoring{
+#linearColoring{
     height: 20px;
     background-image: linear-gradient(to bottom, #f3fcef, var(--primary-color));
 }

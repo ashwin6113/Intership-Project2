@@ -32,8 +32,10 @@ document.getElementById('files').addEventListener('change', function (event) {
 document.getElementById('sun').addEventListener('click',() => {
   moon.style.display = "block";
   sun.style.display = "none";
+  linearColoring.style.display = "block";
 });
 document.getElementById('moon').addEventListener('click',() => {
   moon.style.display = "none";
   sun.style.display = "block";
+  linearColoring.style.display = "none";
 })
