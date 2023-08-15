@@ -16,13 +16,13 @@ body {
 .button1 {
     width: 130px;
     background-color: var(--button-color);
-    box-shadow: 1px 2px 1px 1px var(--primary-color);
+    box-shadow: 1px 2px 1px 1px var(--text-color);
     color: var(--text-color);
 }
 
 .button2 {
     width: 130px;
-    box-shadow: 1px 2px 1px 1px var(--primary-color);
+    box-shadow: 1px 2px 1px 1px var(--text-color);
     color: var(--text-color);
 }
 
@@ -112,7 +112,7 @@ body {
 
 .upload-button{
     width: 350px;
-    box-shadow: 1px 2px 1px 1px  black;
+    box-shadow: 1px 2px 1px 1px  var(--text-color);
 }
 #input{
     width: 350px;
