@@ -1,6 +1,8 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:var(--primary-color);
+    color: var(--text-color);
 }
 
 .head1 {
@@ -12,14 +14,16 @@ body {
 }
 
 .button1 {
-    width: 150px;
-    background-color: #60de29;
-    box-shadow: 1px 2px 1px 1px black;
+    width: 130px;
+    background-color: var(--button-color);
+    box-shadow: 1px 2px 1px 1px var(--primary-color);
+    color: var(--text-color);
 }
 
 .button2 {
-    width: 150px;
-    box-shadow: 1px 2px 1px 1px black;
+    width: 130px;
+    box-shadow: 1px 2px 1px 1px var(--primary-color);
+    color: var(--text-color);
 }
 
 .blogs:hover {
@@ -27,25 +31,36 @@ body {
 }
 
 .button1:hover {
-    background-color: #60de29 !important;
+    background-color:var(--button-color) !important;
 }
 
 .button2:hover {
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .name{
     background-image: linear-gradient(to right, #60de29, #aef490);
     width: 500px;
-    box-shadow: 1px 2px 1px 1px black;
+    box-shadow: 1px 2px 1px 1px var(--primary-color);
     font-size: 20px;
 }
 
 .email{
     background-image: linear-gradient(to right,#aef490, #60de29);
     width: 500px;
-    box-shadow: 1px 2px 1px 1px black;
+    box-shadow: 1px 2px 1px 1px var(--primary-color);
     font-size: 20px;
+}
+
+:root{
+    --primary-color:#fff;
+    --text-color:#343333;
+    --button-color:#60de29;
+}
+.dark-theme{
+    --primary-color:#343333;
+    --text-color:#f4f4f4;
+    --button-color:#3bc06e;
 }
 
 @media screen and (max-width:575px) {
@@ -62,25 +77,20 @@ body {
     }
 }
 
-
-body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-
 .Download{
     width:350px;
-    background-color: #60de29;
+    background-color: var(--button-color);
     box-shadow: 1px 2px 1px 1px  black;
 }
 
 .Download:hover{
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .Retry{
     width:350px;
     box-shadow: 1px 2px 1px 1px  black;
+    background-color: #fff;
 }
 
 .Retry:hover{
@@ -93,11 +103,11 @@ body{
 
 
 .footer{
-    background-color: #002c13;
+    background-color: #24613e;
 }
 
 .upload-button:hover{
-    background-color: #60de29 !important;
+    background-color: var(--button-color) !important;
 }
 
 .upload-button{
@@ -110,9 +120,9 @@ body{
     outline: none;
     background-color: rgb(59, 167, 239);
 }
-.linearColoring{
+#linearColoring{
     height: 20px;
-    background-image: linear-gradient(to bottom, #f3fcef, #fff);
+    background-image: linear-gradient(to bottom, #f3fcef, var(--primary-color));
 }
 
 @media screen  and (max-width:575px){
