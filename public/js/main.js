@@ -6,15 +6,16 @@ const compressAndDownload = async() => {
       return;
     }
     const file = fileInput.files[0];
-   
+
     try {
       const compressedBlob = await compressImage(file, options);
       const url = URL.createObjectURL(compressedBlob);
-      let compressedFileSize = compressedBlob.size/1000;
+      compressedFileSize = compressedBlob.size;
+      compressedFileSize = (compressedFileSize/1024);
       compressedFileSize = compressedFileSize.toFixed(0);
-      console.log(compressedFileSize);
       size.innerHTML = compressedFileSize + "Kb";
-
+      console.log(file.size);
+      console.log(compressedFileSize);
       document.getElementById('download').addEventListener('click', () => {
       const downloadLink = document.createElement('a');
       downloadLink.href = url;
@@ -28,7 +29,7 @@ const compressAndDownload = async() => {
     }
   }
 
-  function compressImage(file, options) {
+  function compressImage(file, quality) {
     return new Promise((resolve, reject) => {
       const image = new Image();
 
@@ -45,7 +46,7 @@ const compressAndDownload = async() => {
 
         canvas.toBlob((blob) => {
           resolve(blob);
-        }, file.type, options.quality);
+        }, file.type, quality);
       };
 
       image.onerror = (error) => {
