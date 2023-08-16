@@ -1,20 +1,26 @@
-var typed = new Typed(".typing", {
+let typed = new Typed(".typing", {
     strings: ["Privacy", "Secure","&#127822;.png", "&#127812;.jpeg", "Safe", "&#127818;.pdf"],
     typeSpeed: 150,
     backSpeed: 150,
     loop: true,
     shuffle:true
 });
-
-let range =45;
-const quality = document.getElementById("quality");
+function showSizeAndQuality(file){
+let range =100;
 quality.innerHTML = `${range}%`;  
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
     range = range.toFixed(0); 
     quality.innerHTML = `${range}%`;
+    compressedFileSize = (fileSize*(range/100)).toFixed(1);
+    size.innerHTML = `${compressedFileSize} Kb`;
 });
+fileSize = file.size;
+fileSize = (fileSize/1000);
+fileSize = fileSize.toFixed(1);
+size.innerHTML = fileSize + "Kb";
+}
 document.getElementById('files').addEventListener('change', function (event) {
   compressAndDownload();
     beforeCompress.style.display = "none";
@@ -25,7 +31,7 @@ document.getElementById('files').addEventListener('change', function (event) {
     quality: 0,
   };
 
-  var darkMode = document.getElementById("darkMode");
+  let darkMode = document.getElementById("darkMode");
   darkMode.onclick = function(){
       document.body.classList.toggle("dark-theme");
   }

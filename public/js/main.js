@@ -10,10 +10,7 @@ const compressAndDownload = async() => {
     try {
       const compressedBlob = await compressImage(file, options);
       const url = URL.createObjectURL(compressedBlob);
-      compressedFileSize = compressedBlob.size;
-      compressedFileSize = (compressedFileSize/1024);
-      compressedFileSize = compressedFileSize.toFixed(0);
-      size.innerHTML = compressedFileSize + "Kb";
+      showSizeAndQuality(file);
       console.log(file.size);
       console.log(compressedFileSize);
       document.getElementById('download').addEventListener('click', () => {

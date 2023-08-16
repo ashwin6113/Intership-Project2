@@ -1,9 +1,11 @@
-var uploadButton = document.getElementById("uploadButton");
-var compressButton = document.getElementById("compressButton");
-var blogButton = document.getElementById("blogButton");
-var blogArrow = document.getElementById("blogArrow");
-var compressArrow = document.getElementById("compressArrow");
-var quality = document.getElementById("quality");
+let uploadButton = document.getElementById("uploadButton");
+let compressButton = document.getElementById("compressButton");
+let blogButton = document.getElementById("blogButton");
+let blogArrow = document.getElementById("blogArrow");
+let compressArrow = document.getElementById("compressArrow");
+let quality = document.getElementById("quality");
+let size = document.getElementById("size");
 let file;
+let fileSize;
 let compressedFileSize;
-let quality;
+// let quality;
