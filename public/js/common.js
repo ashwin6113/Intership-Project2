@@ -14,14 +14,8 @@ document.getElementById("input").addEventListener('input', () => {
     range = range.toFixed(0); 
     quality.innerHTML = `${range}%`;
 });
-document.getElementById('files').addEventListener('change', function () {
+document.getElementById('files').addEventListener('change', function (event) {
     compressAndDownload();
     beforeCompress.style.display = "none";
     afterCompress.style.display = "block";
   });
-
-  const options = {
-    quality: 0,
-  };
-
- 
