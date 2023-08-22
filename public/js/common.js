@@ -7,12 +7,12 @@ let typed = new Typed(".typing", {
 });
 function showSizeAndQuality(file){
 let range =100;
-quality.innerHTML = `${range}%`;  
+quality1.innerHTML = `${range}%`;  
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
     range = range.toFixed(0); 
-    quality.innerHTML = `${range}%`;
+    quality1.innerHTML = `${range}%`;
     compressedFileSize = (fileSize*(range/100)).toFixed(1);
     size.innerHTML = `${compressedFileSize} Kb`;
 });
@@ -22,14 +22,17 @@ fileSize = fileSize.toFixed(1);
 size.innerHTML = fileSize + "Kb";
 }
 document.getElementById('files').addEventListener('change', function (event) {
-  compressAndDownload();
-    beforeCompress.style.display = "none";
-    afterCompress.style.display = "block";
-  });
-
-  const options = {
-    quality: 0,
-  };
+  if (fileInput.files.length === 0) {
+    alert('Please select an image.');
+  }
+  file = fileInput.files[0];
+ showSizeAndQuality(file);
+ filesize =file.size;
+  compressedimage = compressAndDownload(file);
+  beforeCompress.style.display = "none";
+  afterCompress.style.display = "block";
+  console.log(compressedimage.size);
+});
 
   let darkMode = document.getElementById("darkMode");
   darkMode.onclick = function(){
