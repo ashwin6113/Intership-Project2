@@ -1,20 +1,22 @@
-const compressAndDownload = async() => {
+const compressAndDownload = async () => {
   const fileInput = document.getElementById('files');
 
   if (fileInput.files.length === 0) {
     alert('Please select an image.');
     return;
   }
-  const files = fileInput.files;
+  file = fileInput.files;
+  console.log(file[0].size);
 
-  console.log({ files_before_compression: files });
+  console.log({ files_before_compression: file });
 
-  for (let i = 0; i < files.length; i++) { // Initialize i with 0
-    const file = files[i];
-    if (file.type === 'image/png' || file.type === 'image/jpeg' || file.type === 'image/webp') {
+  for (let i = 0; i < file.length; i++) { // Initialize i with 0
+    // const file = files[i];
+    if (file[i].type === 'image/png' || file[i].type === 'image/jpeg' || file[i].type === 'image/webp') {
       try {
-        const compressedFile = await compressImage(file);
+        const compressedFile = await compressImage(file[i]);
         compressed_files.push(compressedFile);
+        console.log(compressedFile.size);
       } catch (error) {
         console.error('Error compressing the image:', error);
       }
@@ -25,47 +27,50 @@ const compressAndDownload = async() => {
 };
 
 
-const compressImage = (file) => {
+const compressImage = () => {
   const ImageCompressor = window.ImageCompressor.ImageCompressor;
   const imageCompressor = new ImageCompressor(); // Use direct instantiation
-  console.log(file);
-  const fileUrl = URL.createObjectURL(file);
-  console.log(fileUrl);
+  const fileUrl = URL.createObjectURL(file[0]);
 
   const options = {
-      toWidth: 800,
-      toHeight: 600,
-      mimeType: "image/jpeg",
-      speed: "low",
-      mode: "strict",
-      quality: 0,
+    // toWidth: 500,
+    // toHeight: 500,
+    mimeType: "image/jpeg",
+    // speed: "low",
+    // mode: "strict",
+    quality: 0.5,
   };
 
   return new Promise((resolve, reject) => {
-    imageCompressor.run(fileUrl, options, proceedCompressedImage,error);
-    function proceedCompressedImage(compressedSrc) {
-      const compressedFile = new File([compressedSrc], `compressed_${file.name}`);
-      console.log(compressedFile);
-      const url = URL.createObjectURL(compressedFile);
+    console.log(fileUrl);
+    imageCompressor.run(fileUrl, options, proceedCompressedImage, error);
+    function proceedCompressedImage(result) {
+      const compressedFile = new File([result], `compressed_${file[0].name}`);
       const compressedFileSize = (compressedFile.size / 1024).toFixed(0);
       size.innerHTML = compressedFileSize + " Kb";
-      
-      // Create a single download link and update its attributes
-      const downloadLink = document.getElementById('download');
-      console.log(url);
-      downloadLink.href = url;
-      downloadLink.download = `compressed_${files.name}`;
-      
       resolve(compressedFile);
     }
+    function error(e) {
+      reject(e);
+    }
+  });
+};
 
-      function error(e) {
-          reject(e);
-        }
-      });
-      };
-      
-      
+document.getElementById('download').addEventListener('click', () => {
+  // console.log({aftercompression: compressed_files});
+  // for (var i = 0; i < compressed_files; i++) {
+  var file = compressed_files[0];
+  var downloadLink = document.createElement('a');
+  var compressedImageLink = URL.createObjectURL(file);
+  downloadLink.href = compressedImageLink;
+  downloadLink.download = file.name;
+  downloadLink.style.display = 'none';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+  // }
+  console.log(compressedImageLink);
+});
 
 // const compressImage = (file) => {
 //   // Objects
