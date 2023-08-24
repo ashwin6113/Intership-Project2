@@ -1,19 +1,19 @@
- 
- const compressAndDownload =(file)=>{
+
+const compressAndDownload =(file)=>{
   options = {
-  file: file,
+    file: file,
   quality: 0.2,
   mimeType:'image/jpeg',
-  maxWidth: 2000,
-  maxHeight: 2000,
-  width: 1000,
-  height: 1000,
-  minWidth: 500,
-  minHeight: 500,
+  // maxWidth: 2000,
+  // maxHeight: 2000,
+  // width: 1000,
+  // height: 1000,
+  // minWidth: 500,
+  // minHeight: 500,
   convertSize: Infinity,
   loose: true,
   redressOrientation: true,
-
+  
   // Callback before compression
   beforeCompress: function (result) {
     console.log('Image size before compression:', result.size);
@@ -26,7 +26,17 @@
     console.log('Image size after compression:', result.size);
     console.log('mime type:', result.type);
     console.log('Actual compression ratio:', ((file.size-result.size) / file.size * 100).toFixed(2) +'%');
-  return result;
+    let url = URL.createObjectURL(result);
+    console.log(url);
+    document.getElementById('download').addEventListener('click', () => {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = `compressed_${file.name}`;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    });
+    return result;
   }
 };
 new ImageCompressor(options);

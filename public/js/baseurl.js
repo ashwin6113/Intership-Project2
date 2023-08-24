@@ -6,7 +6,7 @@ let compressArrow = document.getElementById("compressArrow");
 let quality1 = document.getElementById("quality");
 let download = document.getElementById("download");
 let size = document.getElementById("size");
-let filesize;
+let fileSize;
 const fileInput = document.getElementById('files');
 let compressedimage;
 let file;
