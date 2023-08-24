@@ -33,3 +33,6 @@ document.getElementById('files').addEventListener('change', function (event) {
   afterCompress.style.display = "block";
   console.log(compressedimage.size);
 });
+uploadButton.addEventListener("click",() => {
+  uploadButton.style.backgroundColor = "#60de29";
+});
