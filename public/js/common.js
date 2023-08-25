@@ -6,7 +6,7 @@ let typed = new Typed(".typing", {
     shuffle:true
 });
 function showSizeAndQuality(file){
-let range =50;
+range =50;
 quality1.innerHTML = `${range}%`;  
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
@@ -15,6 +15,7 @@ document.getElementById("input").addEventListener('input', () => {
     quality1.innerHTML = `${range}%`;
     compressedFileSize = (fileSize*(range/100000)).toFixed(0);
     size.innerHTML = `${compressedFileSize} Kb`;
+    // size.innerHTML = `${result.size} Kb`;
 });
 fileSize = file.size;
 fileSize = (fileSize*(range/100000));
@@ -26,8 +27,8 @@ document.getElementById('files').addEventListener('change', function (event) {
     alert('Please select an image.');
   }
   file = fileInput.files[0];
- showSizeAndQuality(file);
- fileSize =file.size;
+  showSizeAndQuality(file);
+  fileSize =file.size;
   compressAndDownload(file);
   beforeCompress.style.display = "none";
   afterCompress.style.display = "block";
@@ -35,4 +36,7 @@ document.getElementById('files').addEventListener('change', function (event) {
 });
 uploadButton.addEventListener("click",() => {
   uploadButton.style.backgroundColor = "#60de29";
+});
+document.getElementById('input').addEventListener('change', function (event) {
+  compressAndDownload(file);
 });

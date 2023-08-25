@@ -9,6 +9,7 @@ let size = document.getElementById("size");
 let fileSize;
 const fileInput = document.getElementById('files');
 let compressedimage;
+let range;
 let file;
 let options;
 let compressedFileSize;

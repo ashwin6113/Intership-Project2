@@ -2,7 +2,7 @@
 const compressAndDownload =(file)=>{
   options = {
     file: file,
-  quality: 0.2,
+  quality: range/100,
   mimeType:'image/jpeg',
   // maxWidth: 2000,
   // maxHeight: 2000,
@@ -24,6 +24,7 @@ const compressAndDownload =(file)=>{
   success: function (result) {
     console.log('result:', result)
     console.log('Image size after compression:', result.size);
+    size.innerHTML = `${(result.size/1000).toFixed(2)} Kb`;
     console.log('mime type:', result.type);
     console.log('Actual compression ratio:', ((file.size-result.size) / file.size * 100).toFixed(2) +'%');
     let url = URL.createObjectURL(result);
