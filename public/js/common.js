@@ -5,7 +5,7 @@ let typed = new Typed(".typing", {
     loop: true,
     shuffle:true
 });
-function showSizeAndQuality(file){
+function showSizeAndQuality(){
 range =50;
 quality1.innerHTML = `${range}%`;  
 document.getElementById("input").addEventListener('input', () => {
@@ -15,28 +15,25 @@ document.getElementById("input").addEventListener('input', () => {
     quality1.innerHTML = `${range}%`;
     compressedFileSize = (fileSize*(range/100000)).toFixed(0);
     size.innerHTML = `${compressedFileSize} Kb`;
-    // size.innerHTML = `${result.size} Kb`;
 });
-fileSize = file.size;
-fileSize = (fileSize*(range/100000));
-fileSize = fileSize.toFixed(0);
-size.innerHTML = fileSize + "Kb";
+compressedFileSize = Number(compressedFileSize);
+compressedFileSize = compressedFileSize.toFixed(0);
+size.innerHTML = compressedFileSize + "Kb";
 }
-document.getElementById('files').addEventListener('change', function (event) {
+document.getElementById('files').addEventListener('change', function () {
   if (fileInput.files.length === 0) {
     alert('Please select an image.');
   }
   file = fileInput.files[0];
-  showSizeAndQuality(file);
   fileSize =file.size;
-  compressAndDownload(file);
+  showSizeAndQuality();
+  compressAndDownload();
   beforeCompress.style.display = "none";
   afterCompress.style.display = "block";
-  console.log(compressedimage.size);
 });
 uploadButton.addEventListener("click",() => {
   uploadButton.style.backgroundColor = "#60de29";
 });
-document.getElementById('input').addEventListener('change', function (event) {
+document.getElementById('input').addEventListener('change', function () {
   compressAndDownload(file);
 });

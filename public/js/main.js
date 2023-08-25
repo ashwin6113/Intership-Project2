@@ -1,5 +1,5 @@
 
-const compressAndDownload =(file)=>{
+const compressAndDownload =()=>{
   options = {
     file: file,
   quality: range/100,
@@ -15,28 +15,26 @@ const compressAndDownload =(file)=>{
   redressOrientation: true,
   
   // Callback before compression
-  beforeCompress: function (result) {
-    console.log('Image size before compression:', result.size);
-    console.log('mime type:', result.type);
+  beforeCompress: function () {
+    console.log('Image size before compression:', file);
   },
 
   // Compression success callback
   success: function (result) {
-    console.log('result:', result)
-    console.log('Image size after compression:', result.size);
-    size.innerHTML = `${(result.size/1000).toFixed(2)} Kb`;
-    console.log('mime type:', result.type);
-    console.log('Actual compression ratio:', ((file.size-result.size) / file.size * 100).toFixed(2) +'%');
+    // showSizeAndQuality();
+    console.log('Image size after compression:', result);
+    compressedFileSize =result.size
+    size.innerHTML = `${(compressedFileSize/1000).toFixed(0)} Kb`;
     let url = URL.createObjectURL(result);
-    console.log(url);
     document.getElementById('download').addEventListener('click', () => {
       const downloadLink = document.createElement('a');
       downloadLink.href = url;
       downloadLink.download = `compressed_${file.name}`;
-      document.body.appendChild(downloadLink);
+      // document.body.appendChild(downloadLink);
       downloadLink.click();
-      document.body.removeChild(downloadLink);
+      // document.body.removeChild(downloadLink);
     });
+    downloadLink = null;
     return result;
   }
 };
