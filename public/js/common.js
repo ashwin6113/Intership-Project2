@@ -1,41 +1,40 @@
-var typed = new Typed(".typing", {
+let typed = new Typed(".typing", {
     strings: ["Privacy", "Secure","&#127822;.png", "&#127812;.jpeg", "Safe", "&#127818;.pdf"],
     typeSpeed: 150,
     backSpeed: 150,
     loop: true,
     shuffle:true
 });
-
-let range =45;
-const quality = document.getElementById("quality");
-quality.innerHTML = `${range}%`;  
+function showSizeAndQuality(){
+range =50;
+quality1.innerHTML = `${range}%`;  
+compressedFileSize = Number(compressedFileSize);
+compressedFileSize = (fileSize*(range/100000)).toFixed(0);
+size.innerHTML = `${compressedFileSize} Kb`;
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
     range = range.toFixed(0); 
-    quality.innerHTML = `${range}%`;
-});
-document.getElementById('files').addEventListener('change', function (event) {
-  compressAndDownload();
-    beforeCompress.style.display = "none";
-    afterCompress.style.display = "block";
+    quality1.innerHTML = `${range}%`;
+    compressedFileSize = (fileSize*(range/100000)).toFixed(0);
+    size.innerHTML = `${compressedFileSize} Kb`;
+    compressedimage = [];
   });
-
-  const options = {
-    quality: 0,
-  };
-
-  var darkMode = document.getElementById("darkMode");
-  darkMode.onclick = function(){
-      document.body.classList.toggle("dark-theme");
+}
+document.getElementById('files').addEventListener('change', function () {
+  if (fileInput.files.length === 0) {
+    alert('Please select an image.');
   }
-document.getElementById('sun').addEventListener('click',() => {
-  moon.style.display = "block";
-  sun.style.display = "none";
-  linearColoring.style.display = "block";
+  file = fileInput.files[0];
+  fileSize =file.size;
+  showSizeAndQuality();
+  compressAndDownload();
+  beforeCompress.style.display = "none";
+  afterCompress.style.display = "block";
 });
-document.getElementById('moon').addEventListener('click',() => {
-  moon.style.display = "none";
-  sun.style.display = "block";
-  linearColoring.style.display = "none";
-})
+uploadButton.addEventListener("click",() => {
+  uploadButton.style.backgroundColor = "#60de29";
+});
+document.getElementById('input').addEventListener('change', function () {
+  compressAndDownload();
+});
