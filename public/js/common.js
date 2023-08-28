@@ -8,6 +8,9 @@ let typed = new Typed(".typing", {
 function showSizeAndQuality(){
 range =50;
 quality1.innerHTML = `${range}%`;  
+compressedFileSize = Number(compressedFileSize);
+compressedFileSize = (fileSize*(range/100000)).toFixed(0);
+size.innerHTML = `${compressedFileSize} Kb`;
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
@@ -15,10 +18,8 @@ document.getElementById("input").addEventListener('input', () => {
     quality1.innerHTML = `${range}%`;
     compressedFileSize = (fileSize*(range/100000)).toFixed(0);
     size.innerHTML = `${compressedFileSize} Kb`;
-});
-compressedFileSize = Number(compressedFileSize);
-compressedFileSize = compressedFileSize.toFixed(0);
-size.innerHTML = compressedFileSize + "Kb";
+    compressedimage = [];
+  });
 }
 document.getElementById('files').addEventListener('change', function () {
   if (fileInput.files.length === 0) {
@@ -35,5 +36,5 @@ uploadButton.addEventListener("click",() => {
   uploadButton.style.backgroundColor = "#60de29";
 });
 document.getElementById('input').addEventListener('change', function () {
-  compressAndDownload(file);
+  compressAndDownload();
 });
