@@ -11,6 +11,7 @@ quality1.innerHTML = `${range}%`;
 compressedFileSize = Number(compressedFileSize);
 compressedFileSize = (fileSize*(range/100000)).toFixed(0);
 size.innerHTML = `${compressedFileSize} Kb`;
+compressedimage = [];
 document.getElementById("input").addEventListener('input', () => {
     range = input.value;
     range = Number(range);
@@ -18,7 +19,6 @@ document.getElementById("input").addEventListener('input', () => {
     quality1.innerHTML = `${range}%`;
     compressedFileSize = (fileSize*(range/100000)).toFixed(0);
     size.innerHTML = `${compressedFileSize} Kb`;
-    compressedimage = [];
   });
 }
 document.getElementById('files').addEventListener('change', function () {
@@ -37,4 +37,5 @@ uploadButton.addEventListener("click",() => {
 });
 document.getElementById('input').addEventListener('change', function () {
   compressAndDownload();
+  compressedimage = [];
 });
