@@ -16,9 +16,10 @@ const compressAndDownload =()=>{
   success: function (result) {
     compressedimage.push(result);
     console.log({files_after_comrpession : compressedimage});
-    let url = URL.createObjectURL(result);
     document.getElementById('download').addEventListener('click', () => {
       for (var i = 0; i < compressedimage.length; i++) {
+        var file = compressedimage[i];
+        let url = URL.createObjectURL(file);
       downloadLink = document.createElement('a');
       downloadLink.href = url;
       downloadLink.download = `compressed_${file.name}`;
@@ -28,7 +29,7 @@ const compressAndDownload =()=>{
       compressedimage = [];
       }
     });
-    return result;
+    // return result;
   }
 };
 new ImageCompressor(options);
