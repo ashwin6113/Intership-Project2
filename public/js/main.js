@@ -1,4 +1,4 @@
-const compressAndDownload =()=>{
+const compressAndDownload = () => {
   options = {
     file: file,
   quality: range/100,
@@ -29,7 +29,6 @@ const compressAndDownload =()=>{
       compressedimage = [];
       }
     });
-    // return result;
   }
 };
 new ImageCompressor(options);
