@@ -37,6 +37,13 @@ body {
 .button2:hover {
     background-color: var(--button-color) !important;
 }
+.items-Dropdown{
+    background-image: linear-gradient(to right, #aef490,#24613e);
+
+}
+.devel:active{
+    background-color: #4c6242 !important;
+}
 
 .name{
     background-image: linear-gradient(to right, #60de29, #aef490);
